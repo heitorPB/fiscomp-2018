@@ -30,7 +30,7 @@ program cosine
         print *,  x, cosx, cos(x), abs(cosx - cos(x)) / cos(x)
 
 contains
-integer(kind = huge_int) function factorial(n)
+integer(kind = huge_int) pure function factorial(n)
         implicit none
         integer, parameter :: huge_int = selected_int_kind(20)
 

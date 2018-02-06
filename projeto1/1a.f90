@@ -8,8 +8,8 @@ program factorial
         real (kind = double_precision) :: stirling, logfact
         real (kind = double_precision), parameter :: pi = atan2(0._double_precision, -1._double_precision)
 
-        print *, "huge_int kind = ", huge_int
-        print *, "double_precision kind = ", double_precision
+        !print *, "huge_int kind = ", huge_int
+        !print *, "double_precision kind = ", double_precision
 
         open(unit = 11, file = "facts.txt", status = "replace")
         write(11, "(A2, A35, A13, A13, A29)") "#n", "n!", "ln(n!)", "ln*(n!)", "[ln(n!) - ln*(n!)] / ln(n!)"
