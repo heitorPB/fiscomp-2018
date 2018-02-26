@@ -4,9 +4,9 @@ program factorial
         integer, parameter :: huge_int = selected_int_kind(20)
         integer (kind = huge_int) :: n, fact
 
-        integer, parameter :: double_precision = selected_real_kind(20)
+        integer, parameter :: double_precision = kind(0.d0)
         real (kind = double_precision) :: stirling, logfact
-        real (kind = double_precision), parameter :: pi = atan2(0._double_precision, -1._double_precision)
+        real (kind = double_precision), parameter :: pi = atan2(0.d0, -1.d0)
 
         !print *, "huge_int kind = ", huge_int
         !print *, "double_precision kind = ", double_precision
@@ -20,10 +20,10 @@ program factorial
                 fact = fact * n
 
                 ! ln(n!)
-                logfact = log(fact * 1d0)
+                logfact = log(real(fact, double_precision))
 
                 ! stirling aproximation of factorial of n
-                stirling = n * log(n * 1d0) - n * 1.d0 + log(2 * pi * n) / 2d0
+                stirling = n * log(real(n, double_precision)) - n + log(2 * pi * n) / 2
 
                 write(11, "(I2, I35, F13.8, F13.8, F12.8)") n, fact, logfact, stirling, (logfact - stirling) / logfact
         end do

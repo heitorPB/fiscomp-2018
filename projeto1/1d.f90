@@ -33,8 +33,8 @@ contains
 subroutine InsertionSort(list, N, M)
 ! https://en.wikipedia.org/wiki/Insertion_sort
 ! https://github.com/frigaut/yorick-imutil/blob/master/insort.c
-        real, intent(inout) :: list(N)
         integer, intent(in) :: N, M
+        real, intent(inout) :: list(N)
 
         integer :: i, j
         real :: temp

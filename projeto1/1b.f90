@@ -14,13 +14,13 @@ program cosine
         integer, parameter :: nmax = 1000
 
         x = 3 * pi / 8
-        cosx = 1.d0
+        cosx = 1
         prec = 1.d-6
         diff = 666
         n = 1
 
         do while (abs(diff) > prec .AND. n < nmax)
-                diff = x**(2d0 * n) / REAL(factorial(2 * n), long)
+                diff = x**(2 * n) / REAL(factorial(2 * n), long)
                 cosx = cosx + (-1)**n * diff
 
                 n = n + 1

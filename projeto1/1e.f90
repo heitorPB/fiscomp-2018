@@ -24,15 +24,15 @@ program powerEigenStuff
 
         allocate(x_k(n), x_k1(n))
         ! initial guess: x0 = (1, 1, 1, ..., 1)
-        x_k = 1d0
+        x_k = 1
 
-        lambda = 0d0
+        lambda = 0
         i = 0
         do while (abs(diff) > prec .and. i < max_iter)
                 ! x_k1 = A x_k
                 x_k1 = matmul(A, x_k)
                 ! normalize x_k1 and atribute it to x_k
-                x_k  = x_k1 / dsqrt(dot_product(x_k1, x_k1))
+                x_k  = x_k1 / sqrt(dot_product(x_k1, x_k1))
 
                 diff = lambda - dot_product(x_k, matmul(A, x_k))
                 lambda = dot_product(x_k, matmul(A, x_k))
