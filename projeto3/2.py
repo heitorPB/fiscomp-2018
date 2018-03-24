@@ -4,11 +4,12 @@ import subprocess
 
 
 # simulation parameters
+# a and alpha from https://en.wikipedia.org/wiki/Atmospheric_pressure#Altitude_variation
 v0    = 666
 theta = [10, 20, 30, 40, 45, 50, 60, 70, 80]
 gamma = 4e-5
-a     = 6.5e-3
-alpha = 2.5
+a     = 0.00973848
+alpha = 3.508
 T0    = 300
 dt    = 0.001
 
@@ -69,7 +70,7 @@ ax.grid()
 plt.title("Trajetória do projétil", fontsize = 'large')
 plt.ylabel("$y \, (m)$", fontsize = 'large')
 plt.xlabel("$x \, (m)$", fontsize = 'large')
-plt.text(12e3, 12e3, "$T_0       = {} \, K   $\n".format(T0) + 
+plt.text(12e3, 13e3, "$T_0       = {} \, K   $\n".format(T0) + 
                      "$a         = {} \, K/m $\n".format(a) +
                      "$\\alpha   = {} \,     $\n".format(alpha) +
                      "$\\gamma/m = {} \, m^{}$\n".format(gamma, "{-1}") +
