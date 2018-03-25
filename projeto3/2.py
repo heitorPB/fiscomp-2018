@@ -6,7 +6,7 @@ import subprocess
 # simulation parameters
 # a and alpha from https://en.wikipedia.org/wiki/Atmospheric_pressure#Altitude_variation
 v0    = 666
-theta = [10, 20, 30, 40, 45, 50, 60, 70, 80]
+theta = [10, 20, 30, 40, 45, 47.3, 50, 60, 70, 80]
 gamma = 4e-5
 a     = 0.00973848
 alpha = 3.508
