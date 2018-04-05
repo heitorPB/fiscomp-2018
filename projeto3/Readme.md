@@ -20,3 +20,13 @@ O código `2.py` é um script Python que compila, executa e faz o gráfico
 da trajetoria do projetil para diferentes angulos de lançamento.
 
 ![Projetil](2.png)
+
+## Exercicio 3 - pêndulo simples
+
+O código `3.f90` recebe como entrada angulo inicial, massa, comprimento,
+aceleração da gravidade, passo de integração (dt) e tempo de simulação.
+
+O código `3.py` é um script Python que compila, executa e faz o gráfico
+da trajetoria do pêndulo para diferentes angulos iniciais.
+
+![Pendulo](3.png)
