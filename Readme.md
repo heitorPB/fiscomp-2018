@@ -34,6 +34,6 @@ aleatórios.
 
 A pasta *misc* tem códigos diversos:
 
-* `matrix.f90`
-  ilustra leitura de matrizes em fortran: é por colunas:
+* [`matrix.f90`](misc/matrix.f90) ilustra leitura de matrizes em fortran: é
+  por colunas:
   ![](misc/matrix.png)
