@@ -22,14 +22,13 @@ if bla.returncode != 0:
     print("Oh, shit")
     exit(1)
 
-
 # run code
 print("Running code with:")
 for r_ in r:
     print("r = {}".format(r_))
 
     for x0_ in x0:
-        print("\tx0 = {}".format(r_, x0_))
+        print("\tx0 = {}".format(x0_))
         in_ = str(r_) + "\n" + str(x0_) + "\n" + str(eps)
 
         with open("out_r{}_x{}".format(r_, x0_), mode = 'w') as outfile:
@@ -38,90 +37,52 @@ for r_ in r:
                                  check = True,
                                  stdout=outfile)
 
-
 print("")
 print("Plotting results")
-fig = plt.figure()
-subplotIndex = 1
-for r_ in r:
-    ax = fig.add_subplot(3, 3, subplotIndex)
+def plota(eixo_x, legenda_y, nome):
+    fig = plt.figure()
+    subplotIndex = 1
+    for r_ in r:
+        ax = fig.add_subplot(3, 3, subplotIndex)
 
-    for x0_ in x0:
-        data = np.loadtxt("out_r{}_x{}".format(r_, x0_), unpack = True)
-        x = data[0]
-        i = data[1]
+        for x0_ in x0:
+            data = np.loadtxt("out_r{}_x{}".format(r_, x0_), unpack = True)
+            x = data[eixo_x]
+            i = data[1]
 
-        ax.plot(i, x, label = "$x_0 = {}$".format(x0_))
+            ax.plot(i, x, label = "$x_0 = {}$".format(x0_))
 
-    #ax.set_yscale('log')
-    #ax.set_xscale('log')
-    #ax.legend(fontsize = 'large', fancybox=True)
-    linhazinha = lines.Line2D([0], [0])
-    ax.legend([linhazinha], ["r = {}".format(r_)],
-              handlelength = 0, handletextpad = 0,
-              fontsize = 'large', fancybox=True)
-    ax.grid()
+        #ax.set_yscale('log')
+        #ax.set_xscale('log')
+        #ax.legend(fontsize = 'large', fancybox=True)
+        linhazinha = lines.Line2D([0], [0])
+        ax.legend([linhazinha], ["r = {}".format(r_)],
+                  handlelength = 0, handletextpad = 0,
+                  fontsize = 'large', fancybox=True)
+        ax.grid()
 
-    if subplotIndex == 1 or subplotIndex == 4 or subplotIndex == 7:
-        plt.ylabel("$x_i$", fontsize = 'large')
-    if subplotIndex == 7 or subplotIndex == 8 or subplotIndex == 9:
-        plt.xlabel("$i$", fontsize = 'large')
-    subplotIndex += 1
+        if subplotIndex == 1 or subplotIndex == 4 or subplotIndex == 7:
+            plt.ylabel(legenda_y, fontsize = 'large')
+        if subplotIndex == 7 or subplotIndex == 8 or subplotIndex == 9:
+            plt.xlabel("$i$", fontsize = 'large')
+        subplotIndex += 1
 
-fig.suptitle("População normalizada", fontsize = 'large')
-# only last ax legend!
-handles, labels = ax.get_legend_handles_labels()
-fig.legend(handles, labels,
-           fontsize = 'large', fancybox = True,
-           shadow = True,
-           bbox_to_anchor=(.91, .45),
-           loc = 'upper right', borderaxespad=-7)
-#plt.show()
-fig.set_size_inches(19.18, 9.89)
-plt.savefig("1b.png",
-            dpi = 150,
-            transparent = True)
+    fig.suptitle("População normalizada", fontsize = 'large')
+    # only last ax legend!
+    handles, labels = ax.get_legend_handles_labels()
+    fig.legend(handles, labels,
+               fontsize = 'large', fancybox = True,
+               shadow = True,
+               bbox_to_anchor=(.91, .45),
+               loc = 'upper right', borderaxespad=-7)
+    #plt.show()
+    fig.set_size_inches(19.18, 9.89)
+    plt.savefig(nome,
+                dpi = 150,
+                transparent = True)
 
-fig = plt.figure()
-subplotIndex = 1
-for r_ in r:
-    ax = fig.add_subplot(3, 3, subplotIndex)
-
-    for x0_ in x0:
-        data = np.loadtxt("out_r{}_x{}".format(r_, x0_), unpack = True)
-        x = data[2]
-        i = data[1]
-
-        ax.plot(i, x, label = "$x_0 = {}$".format(x0_))
-
-    #ax.set_yscale('log')
-    #ax.set_xscale('log')
-    #ax.legend(fontsize = 'large', fancybox=True)
-    linhazinha = lines.Line2D([0], [0])
-    ax.legend([linhazinha], ["r = {}".format(r_)],
-              handlelength = 0, handletextpad = 0,
-              fontsize = 'large', fancybox=True)
-    ax.grid()
-
-    if subplotIndex == 1 or subplotIndex == 4 or subplotIndex == 7:
-        plt.ylabel("$d_i$", fontsize = 'large')
-    if subplotIndex == 7 or subplotIndex == 8 or subplotIndex == 9:
-        plt.xlabel("$i$", fontsize = 'large')
-    subplotIndex += 1
-
-fig.suptitle("População normalizada", fontsize = 'large')
-# only last ax legend!
-handles, labels = ax.get_legend_handles_labels()
-fig.legend(handles, labels,
-           fontsize = 'large', fancybox = True,
-           shadow = True,
-           bbox_to_anchor=(.91, .45),
-           loc = 'upper right', borderaxespad=-7)
-#plt.show()
-fig.set_size_inches(19.18, 9.89)
-plt.savefig("1c.png",
-            dpi = 150,
-            transparent = True)
+plota(0, "$x_i$", "1b.png")
+plota(2, "$d_i$", "1c.png")
 
 
 # getting rid of output files
