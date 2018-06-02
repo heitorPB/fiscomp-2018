@@ -1,6 +1,8 @@
 # FisComp 2018
 
-Professores: Eric e Tereza
+## Projetos
+
+Professor: Eric
 
 * Projeto 1
   * Exercício 1 - fatoriais e a aproximação de Stirling
@@ -13,6 +15,25 @@ Professores: Eric e Tereza
   * Exercicio 2 - integral numérica
   * Exercicio 2 - equações algébricas não lineares
 * Projeto 3
-  * Exercicio 1 - Ciclista
+  * Exercicio 1 - ciclista
   * Exercicio 2 - lançamento de projetil
-  * Exercício 3 - Pẽndulo simples
+  * Exercício 3 - pêndulo simples
+* Projeto 4
+  * Exercício 1 - órbitas circulares e elípticas
+  * Exercicio 2 - satélite geoestacionário e os efeitos da Lua
+  * Exercicio 3 - coreografias celestes
+* Projeto 5
+  * Exercicio 1 - ponto fixo de período um
+  * Exercicio 2 - dobras de período e caos
+  * Exercicio 3 - modelo predador-presa
+
+Os projetos da Tereza foram similares, mas o projeto 4 dela foi sobre números
+aleatórios.
+
+## Misc
+
+A pasta *misc* tem códigos diversos:
+
+* `matrix.f90`
+  ilustra leitura de matrizes em fortran: é por colunas:
+  ![](misc/matrix.png)
