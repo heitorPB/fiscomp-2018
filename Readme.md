@@ -34,6 +34,13 @@ aleatórios.
 
 A pasta *misc* tem códigos diversos:
 
-* [`matrix.f90`](misc/matrix.f90) ilustra leitura de matrizes em fortran: é
-  por colunas:
+* [`matrix.f90`](misc/matrix.f90) ilustra leitura de matrizes em fortran:
+  é por colunas:
   ![](misc/matrix.png)
+* [`iso_c_binding.f90`](misc/iso_c_binding.f90) ilustra como usar os
+  parâmetros `kind` corretamente e quais valores são compatíveis com o
+  padrão C, através do módulo `ISO_C_BINDING` do Fortran 2003:
+  ![](iso_c_binding.png)
+
+  Sugestão de compilação: `gfortran -Wall -Wextra -Wconversion-extra iso_c_binding.f90`
+
