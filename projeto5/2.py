@@ -40,7 +40,7 @@ fig.legend(handles, labels,
            shadow = True,
            bbox_to_anchor=(.91, .45),
            loc = 'upper right', borderaxespad=-7)
-plt.title("Raízes de $G^{(i)}(x)$")
+fig.suptitle("Raízes de $G^{(i)}(x)$")
 #plt.show()
 fig.set_size_inches(19.18, 9.89)
 plt.savefig("2a.png",
