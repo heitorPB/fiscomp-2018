@@ -36,11 +36,13 @@ A pasta *misc* tem códigos diversos:
 
 * [`matrix.f90`](misc/matrix.f90) ilustra leitura de matrizes em fortran:
   é por colunas:
+
   ![](misc/matrix.png)
 
 * [`iso_c_binding.f90`](misc/iso_c_binding.f90) ilustra como usar os
   parâmetros `kind` corretamente e quais valores são compatíveis com o
   padrão C, através do módulo `ISO_C_BINDING` do Fortran 2003:
+
   ![](misc/iso_c_binding.png)
 
   Sugestão de compilação: `gfortran -Wall -Wextra -Wconversion-extra iso_c_binding.f90`
@@ -48,4 +50,5 @@ A pasta *misc* tem códigos diversos:
 * [`maxMinValues.f90`](misc/maxMinValues.f90) mostra os valores máximos que
   inteiros de diversos tipos podem ter. Também mostra os valors máximos e
   mínimos de variáveis reais:
+
   ![](misc/maxMinValues.png)
