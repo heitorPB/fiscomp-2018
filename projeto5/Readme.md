@@ -21,3 +21,11 @@ O código `2.py` é um script Python que compila, executa e faz os gráficos:
 ![](2b.png)
 
 ![](2b_zoom.png)
+
+### Mapas de Poincare
+
+O código `2_poincare.f90` imprime no terminal `xi, xi+1, xi+2`, para fazer um graf 3D.
+
+O código `2_poincare.py` é um script Python que compila, executa e faz os gráficos:
+
+![](2_poincare.png)
