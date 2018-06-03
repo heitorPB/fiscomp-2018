@@ -14,6 +14,10 @@ O código `1.py` é um script Python que compila, executa e faz os gráficos:
 
 O código `2.f90` imprime no terminal `xi, r` como pedido no item b).
 
+**Cuidado:** o código produz um arquivo de saída de ~1.5 GB e leva alguns
+minutos para terminar de rodar! O arquivo e salvo em `/dev/shm/out_caos`,
+garanta que sua RAM tem espaço para isso.
+
 O código `2.py` é um script Python que compila, executa e faz os gráficos:
 
 ![](2a.png)

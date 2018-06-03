@@ -64,7 +64,7 @@ if bla.returncode != 0:
 x0 = .666
 # run code
 print("Running code")
-with open("out_caos", mode = 'w') as outfile:
+with open("/dev/shm/out_caos", mode = 'w') as outfile:
     bla = subprocess.run(["./a.out"],
                          input = str(x0),
                          encoding ='ascii',
@@ -75,10 +75,10 @@ print("Plotting results for ex 2b")
 
 fig = plt.figure()
 ax = fig.add_subplot(111)
-data = np.loadtxt("out_caos", unpack = True)
+data = np.loadtxt("/dev/shm/out_caos", unpack = True)
 x = data[1]
 y = data[0]
-ax.scatter(x, y, s = 0.5, c = y, cmap = 'inferno')
+ax.scatter(x, y, s = 0.4, c = y, cmap = 'inferno')
 
 plt.title("CAOS")
 plt.xlabel("$r$", fontsize = 'large')
@@ -100,4 +100,5 @@ plt.savefig("2b_zoom.png",
 print("getting rid of output files")
 for shit in glob.glob("out_*"):
     os.remove(shit)
+os.remove("/dev/shm/out_caos")
 print(":D")

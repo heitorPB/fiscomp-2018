@@ -10,14 +10,14 @@ program caos
 
         read(*, *) x0
 
-        do j = -4001, 4001
+        do j = -2101, 4001
                 r = real(j, c_double) / 1d3
 
                 x1 = x0
                 do i = 1, 137
                         x1 = g(r, x1)
                 end do
-                do i = 1, 137
+                do i = 1, 666 / 2
                         x1 = g(r, x1)
                         write(*, *) x1, r
                 end do
