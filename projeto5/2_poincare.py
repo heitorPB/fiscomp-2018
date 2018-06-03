@@ -66,7 +66,7 @@ for r_ in r:
     plotIndex += 1
 
 fig.suptitle("Poincaré plot for $G(x) = r x (1 - x)$")
-plt.show()
+#plt.show()
 fig.set_size_inches(19.18, 9.89)
 fig.savefig("2_poincare.png",
             dpi = 150,

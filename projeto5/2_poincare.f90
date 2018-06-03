@@ -14,7 +14,7 @@ program caos
         x1 = g(r, x0)
         x2 = g(r, x1)
         write(*, *) x0, x1, x2
-        do i = 1, 1000
+        do i = 1, 42666
                 x0 = x1
                 x1 = x2
                 x2 = g(r, x2)
