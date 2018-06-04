@@ -17,7 +17,7 @@ program caos
                 do i = 1, 137
                         x1 = g(r, x1)
                 end do
-                do i = 1, 666 / 2
+                do i = 1, 666 + 137 + 42
                         x1 = g(r, x1)
                         write(*, *) x1, r
                 end do
