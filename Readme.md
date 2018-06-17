@@ -4,6 +4,8 @@
 
 Professor: Eric
 
+Arquivos: `projeto?/p?_fiscomp18.pdf`
+
 * Projeto 1
   * Exercício 1 - fatoriais e a aproximação de Stirling
   * Exercício 2 - série de Taylor para o cosseno
@@ -26,9 +28,18 @@ Professor: Eric
   * Exercicio 1 - ponto fixo de período um
   * Exercicio 2 - dobras de período e caos
   * Exercicio 3 - modelo predador-presa
+* Projeto 6
+  * Exercicio 1 - números aleatórios, integrais e amostragem
+  * Exercicio 2 - decaimento radioativo
+  * Exercicio 3 - passeio aleatório
 
-Os projetos da Tereza foram similares, mas o projeto 4 dela foi sobre números
-aleatórios.
+
+Os projetos da Tereza foram similares, mas:
+- projeto 4 dela foi sobre números aleatórios.
+- projeto 6 dela foi sobre anã branca.
+
+Arquivos: `projeto?/proj?_fiscomp18.pdf`
+
 
 ## Misc
 
