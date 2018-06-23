@@ -28,6 +28,7 @@ if bla.returncode != 0:
     exit(1)
 
 # run code
+print("")
 print("N0 = {}".format(N0))
 print("tau = {}".format(tau))
 print("dt = {}".format(dt))
@@ -53,7 +54,7 @@ Y = []
 
 for data in glob.glob("out_*"):
     x, y = np.loadtxt(data, unpack = True)
-    ax.plot(x, y, '-.', linewidth = 0.85, alpha = 0.5)
+    ax.plot(x, y, '-.', linewidth = 0.85, alpha = 0.3)
     X.append(x)
     Y.append(y)
 
@@ -78,26 +79,27 @@ Y_avg = np.mean(YY, axis = 0)
 Y_std = np.std(YY, axis = 0)
 
 # plot average
-ax.plot(XX, Y_avg, linewidth = 2.5, label = "Average")
-ax.fill_between(XX, Y_avg - Y_std, Y_avg + Y_std, alpha = 0.1)
+ax.plot(XX, Y_avg, color = 'green', linewidth = 2.5, label = "Average")
+ax.fill_between(XX, Y_avg - Y_std, Y_avg + Y_std, color = 'green', alpha = 0.35)
 
 # plot the exact solution
 y = np.exp(-XX / tau) * N0
 ax.plot(XX, y, '--', color = 'black', linewidth = 2.0, label = "Exact")
 
 # plot sigma
-ax.plot(XX, Y_std, linewidth = 2.5, label = "$\sigma(t /\\tau)$")
+ax.plot(XX, Y_std, linewidth = 2.5, color = 'orange', label = "$\sigma(t /\\tau)$")
 
 ax.grid()
 ax.legend()
 
-plt.title("Radioactive decay", fontsize = 22)
+plt.title("Radioactive decay of {} samples".format(Ntimes), fontsize = 22)
 plt.xlabel("$t / \\tau$", fontsize = 18)
 plt.ylabel("$N(t / \\tau)$", fontsize = 18)
 
 plt.xlim(0, 4 * tau)
 
 fig.tight_layout()
+#plt.show()
 fig.set_size_inches(19.18, 9.89)
 
 plt.savefig("2_decay.png",
