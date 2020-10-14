@@ -1,5 +1,10 @@
 # FisComp 2018
 
+Disciplina de Física Computacional, ministrada no [IFSC](https://ifsc.usp.br/)
+na qual fui monitor nos anos de 2017 e 2018.
+
+![](projeto5/2b.png)
+
 ## Projetos
 
 Professor: Eric
